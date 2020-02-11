@@ -74,7 +74,7 @@ class TreeDropDown extends Widget
         return $tree;
     }
 
-    protected function tplMenu($category, $str, &$res = []) {
+    protected function tplMenu($category, $str = '', &$res = []) {
 
         foreach ($category as $cat) {
 
@@ -96,7 +96,7 @@ class TreeDropDown extends Widget
             ->asArray()
             ->all();
 
-        $this->items = $this->tplMenu($this->getTree($data), '');
+        $this->items = $this->tplMenu($this->getTree($data));
 
         return Html::activeDropDownList(
             $this->model,
