@@ -74,9 +74,7 @@ class TreeDropDown extends Widget
         return $tree;
     }
 
-    protected function tplMenu($category, $str) {
-
-        static $res = [];
+    protected function tplMenu($category, $str, &$res = []) {
 
         foreach ($category as $cat) {
 
